@@ -28,7 +28,7 @@ This initiative is organized **in collaboration with IIT Gandhinagar**.
 
 | Task | Description | Status |
 |------|-------------|---------|
-| [**Task 0**](Week0/Task0/README.md) | 🛠 Installed and verified **Iverilog**, **Yosys**, and **GTKWave** | ✅ Completed |
+| [**Task 0**](Week0/README.md) | 🛠 Installed and verified **Iverilog**, **Yosys**, and **GTKWave** | ✅ Completed |
 
 ### ✅ Key Learnings
 - Set up **Ubuntu 20.04+ VM** inside **Oracle VirtualBox**.  
