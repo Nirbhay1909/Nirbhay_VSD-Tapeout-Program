@@ -24,11 +24,13 @@ This initiative is organized **in collaboration with IIT Gandhinagar**.
 
 ---
 
-## 📅 Week 0 — Environment Setup & Tools
+## 📅 Weekly Progress Overview
 
-| Task | Description | Status |
-|------|-------------|---------|
-| [**Task 0**](Week0/README.md) | 🛠 Installed and verified **Iverilog**, **Yosys**, and **GTKWave** | ✅ Completed |
+| Week | Focus / Work Done | Tools |
+|------|-----------------|-----------------|
+| [Week 0](Week0/README.md) | Environment Setup & Tools Installation | Ubuntu VM setup, Yosys, Iverilog, GTKWave |
+
+---
 
 ### ✅ Key Learnings
 - Set up **Ubuntu 20.04+ VM** inside **Oracle VirtualBox**.  
