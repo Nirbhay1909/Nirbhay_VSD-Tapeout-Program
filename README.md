@@ -34,12 +34,7 @@ This initiative is organized **in collaboration with IIT Gandhinagar**.
 
 ### ✅ Key Learnings
 - Set up **Ubuntu 20.04+ VM** inside **Oracle VirtualBox**.  
-- Installed and tested open-source tools for **simulation, synthesis, and waveform analysis**.  
-- Gained first exposure to the **EDA flow** required for SoC design.  
-
----
-
-## 📂 Repository Structure
+- Installed and tested open-source tools for **simulation, synthesis, and waveform analysis**.   
 
 ---
 
