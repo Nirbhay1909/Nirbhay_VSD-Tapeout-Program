@@ -21,7 +21,7 @@ This week focused on **setting up the environment** and installing the essential
 #### <ins>**Yosys**</ins>
 ```bash
 $ sudo apt-get update
-$sudo apt install git                 #If git is not installed
+$ sudo apt install git                 #If git is not installed
 $ git clone https://github.com/YosysHQ/yosys.git
 $ cd yosys
 $ git submodule update --init --recursive
