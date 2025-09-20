@@ -43,7 +43,7 @@ This initiative is organized **in collaboration with IIT Gandhinagar**.
 
 ## 📈 Weekly Progress Tracker
 
-[![Week0](https://img.shields.io/badge/Week%200-Tools%20Setup-success?style=flat-square)](Week0)  
+[![Week0](https://github.com/Nirbhay1909/Nirbhay_VSD-Tapeout-Program/blob/main/Week0/Readme.md)(Week0)  
 ![Week 1](https://img.shields.io/badge/Week%201-Coming%20Soon-lightgrey?style=flat-square)  
 ![Week 2](https://img.shields.io/badge/Week%202-Upcoming-lightgrey?style=flat-square)  
 
