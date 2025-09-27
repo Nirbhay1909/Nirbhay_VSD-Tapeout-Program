@@ -170,3 +170,21 @@ module dff_syncres (
 endmodule
 ```
 ![Sync_Reset_Yosys](Images/Sync_res.jpg)
+
+---
+
+### 🔹 What is Optimization?
+Optimization in digital design refers to reducing the **area, power, and delay** of the synthesized circuit without changing its functionality.  
+Yosys performs multiple optimization passes that:
+- Remove redundant logic.
+- Minimize gate usage.
+- Simplify Boolean expressions.
+- Merge equivalent signals.
+- Constant-propagate values where possible.
+
+#### Using the same commands as above we run two files in Yosys and the following are the results of them:
+
+![Optimization File 1](Images/opt_yosys1.jpg)
+![Optimization File 1 Netlist](Images/opt_netlist1.jpg)
+![Optimization File 2](Images/opt_yosys2.jpg)
+![Optimization File 2 Netlist](Images/opt_netlist2.jpg)
