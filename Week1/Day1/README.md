@@ -32,7 +32,7 @@ $ ./a.out
 # Open waveform in GTKWave
 $ gtkwave tb_good_mux.vcd
 ```
-![Waveform Output](images/waveform.png)
+![Waveform Output](Images/gtkwave.jpg)
 ---
 
 ### 2. Yosys & Logic Synthesis
@@ -42,7 +42,17 @@ $ gtkwave tb_good_mux.vcd
   - Netlist + Same Testbench → Iverilog → `.vcd` → GTKWave.  
   - Output waveforms must **match RTL simulation results**.
 
-![Yosys Flow](Images/yosys_flow.png)
+### 🧩 Yosys Synthesis  
+
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog good_mux.v
+synth -top good_mux
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![Yosys Flow](Images/yosys_output.jpg)
 
 ---
 
@@ -51,7 +61,13 @@ $ gtkwave tb_good_mux.vcd
 - **Synthesis**: Maps RTL to logic gates and connections.  
 - **Output**: **Netlist file** (actual hardware representation).  
 
-![Logic Synthesis](Images/logic_synthesis.png)
+### Export Netlist  
+
+```bash
+write_verilog -noattr good_mux_netlist.v 
+!gedit good_mux_flat.v
+```
+![Logic Synthesis](Images/netlist.jpg)
 
 ---
 
