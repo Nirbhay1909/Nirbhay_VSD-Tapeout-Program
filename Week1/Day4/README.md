@@ -67,4 +67,46 @@ module ternary_operator_mux (input i0 , input i1 , input sel , output y);
 	assign y = sel?i1:i0;
 	endmodule
 ```
+![ternary operator mux waveform](Images/ternary_waveform)
+![ternary operator mux GLS waveform](Images/ternary_gls)
+![ternary operator mux output](Images/ternary_output)
 
+#### **Lab 2:**
+  
+```verilog
+module bad_mux (input i0 , input i1 , input sel , output reg y);
+always @ (sel)
+begin
+	if(sel)
+		y <= i1;
+	else 
+		y <= i0;
+end
+endmodule
+```
+![bad mux waveform](Images/bad_mux_waveform)
+![bad mux GLS waveform](Images/bad_mux_gls)
+![bad mux output](Images/bad_mux_output)
+
+#### **Lab 3:**
+  
+```verilog
+module blocking_caveat (input a , input b , input  c, output reg d); 
+reg x;
+always @ (*)
+begin
+	d = x & c;
+	x = a | b;
+end
+endmodule
+```
+![blocking_caveat waveform](Images/blocking_caveat_waveform)
+![blocking_caveat output](Images/blocking_caveat_output)
+
+---
+
+### 📌 Key Takeaways
+
+- GLS ensures that the **synthesized netlist behaves like RTL**.  
+- Proper usage of **blocking/non-blocking statements** is critical to avoid simulation mismatches.  
+- Timing-aware gate models allow **GLS to validate timing**, not just logic.  
