@@ -222,8 +222,10 @@ module fa (input a , input b , input c, output co , output sum);
 	assign {co,sum}  = a + b + c ;
 endmodule
 ```
+![rca_ waveform decimal](Images/rca_output_decimal.jpg)
 ![rca_ waveform](Images/rca_waveform.jpg)
 ![rca_ output](Images/rca_output.jpg)
+![fa_ output](Images/fa_output.jpg)
 
 ---
 ### Takeaways
