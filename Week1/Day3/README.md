@@ -32,7 +32,7 @@ Follow same steps for Yosys output and netlist as shown in Day1, just add the fo
 ```bash
 opt_clean -purge
 ```
-![Opt Check 1](Images/opt_check1.jpg)
+![Opt Check 1](Images/opt_check.jpg)
 
 ##### Verilog Code for Lab 2:
 ```verilog
