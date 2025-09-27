@@ -104,6 +104,24 @@ show
 ```
 ![Flatten Design](Images/Flatten_Design.jpg)
 
+---
+
+### 🧩 Viewing Sub-Modules in Yosys  
+
+You can also synthesize and inspect **sub-modules** of a hierarchical design individually.  
+
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog multiple_modules.v
+synth -top sub_module1
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![Sub Module](Images/sub_module1.jpg)
+
+---
+
 ### ⏱️ Flip-Flop Based Coding Styles  
 
 #### Why Flip-Flops are Important
