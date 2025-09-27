@@ -67,9 +67,9 @@ module ternary_operator_mux (input i0 , input i1 , input sel , output y);
 	assign y = sel?i1:i0;
 	endmodule
 ```
-![ternary operator mux waveform](Images/ternary_waveform)
-![ternary operator mux GLS waveform](Images/ternary_gls)
-![ternary operator mux output](Images/ternary_output)
+![ternary operator mux waveform](Images/ternary_waveform.jpg)
+![ternary operator mux GLS waveform](Images/ternary_gls.jpg)
+![ternary operator mux output](Images/ternary_output.jpg)
 
 #### **Lab 2:**
   
@@ -84,9 +84,9 @@ begin
 end
 endmodule
 ```
-![bad mux waveform](Images/bad_mux_waveform)
-![bad mux GLS waveform](Images/bad_mux_gls)
-![bad mux output](Images/bad_mux_output)
+![bad mux waveform](Images/bad_mux_waveform.jpg)
+![bad mux GLS waveform](Images/bad_mux_gls.jpg)
+![bad mux output](Images/bad_mux_output.jpg)
 
 #### **Lab 3:**
   
@@ -100,8 +100,8 @@ begin
 end
 endmodule
 ```
-![blocking_caveat waveform](Images/blocking_caveat_waveform)
-![blocking_caveat output](Images/blocking_caveat_output)
+![blocking_caveat waveform](Images/blocking_caveat_waveform.jpg)
+![blocking_caveat output](Images/blocking_caveat_output.jpg)
 
 ---
 
