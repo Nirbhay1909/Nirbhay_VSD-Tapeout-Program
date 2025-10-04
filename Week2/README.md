@@ -94,6 +94,104 @@ These tools allow students to observe CPU–memory interactions, verify control 
 
 ---
 
+## 🛠 Getting Started
+
+📥 Clone the Project
+```bash
+cd ~/VLSI
+git clone https://github.com/manili/VSDBabySoC.git
+cd VSDBabySoC
+```
+
+🔄 Convert TLV to Verilog
+RVMYTH uses TL-Verilog (.tlv) and needs conversion to Verilog.
+Steps:
+
+# Install tools
+```bash
+sudo apt update
+sudo apt install python3-venv python3-pip
+
+# Set up virtual environment
+python3 -m venv sp_env
+source sp_env/bin/activate
+
+# Install SandPiper-SaaS
+pip install pyyaml click sandpiper-saas
+# Convert TLV to Verilog
+sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+```
+Output: rvmyth.v in src/module/.
+
+---
+
+### 🧪 Running Simulation
+
+🔹 Pre-Synthesis Simulation
+```bash
+mkdir -p output/pre_synth_sim
+
+iverilog -o output/pre_synth_sim/pre_synth_sim.out \
+  -DPRE_SYNTH_SIM \
+  -I src/include -I src/module \
+  src/module/testbench.v
+
+cd output/pre_synth_sim
+./pre_synth_sim.out
+```
+
+📊 View Waveforms
+Run:
+```bash
+gtkwave output/pre_synth_sim/pre_synth_sim.vcd
+```
+
+### 🧠 How the CPU Works
+
+- The CPU runs a fixed program to:
+  - Count numbers.
+  - Store results in r17.
+  - Create waveforms for DAC.
+  - Loop indefinitely.
+
+#### Instructions
+  - ADDI r9, r0, 1: Sets r9 = 1 (step size).
+  - ADDI r10, r0, 43: Sets r10 = 43 (loop limit).
+  - ADDI r11, r0, 0: Sets r11 = 0 (counter).
+  - ADDI r17, r0, 0: Sets r17 = 0 (DAC input).
+  - ADD r17, r17, r11: Adds r11 to r17.
+  - ADDI r11, r11, 1: Increments r11.
+  - BNE r11, r10, -4: Loops until r11 = 43.
+  - ADD r17, r17, r11: Adds r11 to r17.
+  - SUB r17, r17, r11: Subtracts r11 from r17.
+  - SUB r11, r11, r9: Decrements r11 by r9.
+  - BNE r11, r9, -4: Loops until r11 = 1.
+  - SUB r17, r17, r11: Adjusts r17.
+  - BEQ r0, r0, ...: Stays in loop.
+
+#### Program Phases
+  - Ramp Up: r11 = 0 to 42, r17 sums to 903, steady increase.
+  - Peak: r11 = 43, r17 = 946, maximum value.
+  - Oscillation: r11 = 43 to 1, r17 = 903 ± r11, up-and-down pattern.
+  - Final: r11 = 1, r17 adjusted, holds steady.
+  - Flow: Instructions → CPU → r17 → DAC → Analog Output.
+
+### 📈 DAC Output
+
+Converts r17 to voltage using:
+
+#### Scaling:
+$$
+V_{OUT} = \frac{r_{17}}{1023} \times V_{REF\_SPAN} \quad (\text{with } V_{REF\_SPAN} = 1.0\ \text{V})
+$$
+
+Example voltages:
+- r17 = 903, Vout = 0.882 V.
+- r17 = 946, Vout = 0.925 V.
+
+In GTKWave, set OUT to Analog Step for visualization.
+---
+
 ## Conclusion  
 Modern electronic devices rely heavily on SoCs because of their compactness, performance, and efficiency. Understanding their architecture and design flow is essential for anyone entering the semiconductor and VLSI domains.  
 
