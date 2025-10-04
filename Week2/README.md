@@ -127,7 +127,7 @@ Output: rvmyth.v in src/module/.
 
 ### 🧪 Running Simulation
 
-🔹 Pre-Synthesis Simulation
+#### 🔹 Pre-Synthesis Simulation
 ```bash
 mkdir -p output/pre_synth_sim
 
@@ -140,11 +140,16 @@ cd output/pre_synth_sim
 ./pre_synth_sim.out
 ```
 
-📊 View Waveforms
+#### 📊 View Waveforms
 Run:
 ```bash
 gtkwave output/pre_synth_sim/pre_synth_sim.vcd
 ```
+
+#### Output Waveform
+![Week2 Image 1](Images/week2_1.jpg)
+![Week2 Image 2](Images/week2_2.jpg)
+![Week2 Image 3](Images/week2_3.jpg)
 
 ### 🧠 How the CPU Works
 
