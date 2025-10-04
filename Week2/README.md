@@ -195,6 +195,7 @@ Example voltages:
 - r17 = 946, Vout = 0.925 V.
 
 In GTKWave, set OUT to Analog Step for visualization.
+
 ---
 
 ## Conclusion  
